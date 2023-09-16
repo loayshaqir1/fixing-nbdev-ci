@@ -1,9 +1,15 @@
 name: CI
-on:  [workflow_dispatch, pull_request, push]
+on: [workflow_dispatch, pull_request, push]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     container:
       image: loayshaqir/nbdev_ci_image
-    steps: [uses: fastai/workflows/nbdev-ci@master]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Use nbdev CI Workflow
+        uses: fastai/workflows/nbdev-ci@master
+      - name: Move to spanner_workbench Directory
+        run: cd nbdev_spanner_workbench

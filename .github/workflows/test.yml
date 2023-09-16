@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Tell Me Where you are
+        run: python -c "import os; print(os.getcwd()); print(os.listdir(os.getcwd()));"
       - name: Move to spanner_workbench Directory
         run: cd nbdev_spanner_workbench
       - name: Use nbdev CI Workflow

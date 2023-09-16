@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Use nbdev CI Workflow
-        uses: fastai/workflows/nbdev-ci@master
       - name: Move to spanner_workbench Directory
         run: cd nbdev_spanner_workbench
+      - name: Use nbdev CI Workflow
+        uses: fastai/workflows/nbdev-ci@master
